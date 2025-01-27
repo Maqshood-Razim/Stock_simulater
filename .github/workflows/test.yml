@@ -27,8 +27,8 @@ jobs:
           DOCKERHUB_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           IMAGE_NAME: stock-simulater
         run: |
-          docker build -t $DOCKER_USERNAME/$stock-simulater .
-          docker push $DOCKER_USERNAME/$stock-simulater:latest
+          docker build -t $DOCKER_USERNAME/$stock-simulator .
+          docker push $DOCKER_USERNAME/$stock-simulator:latest
 
   test:
     runs-on: ubuntu-latest
