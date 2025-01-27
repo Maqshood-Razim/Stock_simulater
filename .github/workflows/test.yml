@@ -25,7 +25,7 @@ jobs:
       - name: Build, tag, and push image to DockerHub
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          IMAGE_NAME: STOCK_SIMULATOR  # Ensure the image name is set correctly
+          IMAGE_NAME: stock_simulator 
         run: |
           docker build -t $DOCKER_USERNAME/$IMAGE_NAME .
           docker push $DOCKER_USERNAME/$IMAGE_NAME:latest  # Push to DockerHub with latest tag
