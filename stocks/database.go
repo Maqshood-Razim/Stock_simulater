@@ -2,7 +2,7 @@ package stocks
 
 import (
 	"log"
-   
+
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
@@ -11,7 +11,7 @@ var DB *gorm.DB
 
 // InitDB initializes the MySQL database connection
 func InitDB() {
-	dsn := "root:razeem19@tcp(127.0.0.1:3306)/stock_market"
+	dsn := "root:razeem19@tcp(host.docker.internal:3306)/stock_market"
 	var err error
 
 	DB, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
