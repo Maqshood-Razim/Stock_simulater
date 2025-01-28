@@ -9,7 +9,6 @@ import (
 
 var DB *gorm.DB
 
-// InitDB initializes the MySQL database connection
 func InitDB() {
 	dsn := "root:razeem19@tcp(host.docker.internal:3306)/stock_market"
 	var err error
@@ -19,10 +18,9 @@ func InitDB() {
 		log.Fatalf("Failed to connect to the database: %v", err)
 	}
 
-	// Perform Auto-Migration for all models
 	err = DB.AutoMigrate(
-		&Stock{}, // Stock table
-		&Order{}, // Order table
+		&Stock{},
+		&Order{},
 	)
 	if err != nil {
 		log.Printf("Failed to auto-migrate the database: %v", err)
